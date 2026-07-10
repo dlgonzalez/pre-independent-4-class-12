@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Independent 4 | Class 12</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f4f1eb;color:#1e1e1e;font-size:15px;line-height:1.65}
+.hdr{background:#1a2e4a;color:#fff;padding:2rem 2rem 1.4rem}
+.htag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#c9943a;font-weight:700;margin-bottom:.4rem}
+.hdr h1{font-family:Georgia,serif;font-size:2rem;font-weight:700;line-height:1.2}
+.hdr h1 em{font-style:italic;color:#a8c5e8}
+.hmeta{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem}
+.hpill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:.2rem .8rem;font-size:.77rem;color:#dde6f0}
+.objectives{background:#1a2e4a;border-top:1px solid rgba(255,255,255,.1);padding:1rem 2rem 1.4rem}
+.obj-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#c9943a;font-weight:700;margin-bottom:.7rem}
+.obj-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem .8rem}
+.obj-item{font-size:.83rem;color:#dde6f0;display:flex;gap:.5rem;align-items:flex-start}
+.obj-n{color:#c9943a;font-weight:700;flex-shrink:0}
+.xpbar{background:#142238;padding:.75rem 2rem;display:flex;align-items:center;gap:1rem}
+.xplbl{font-size:.72rem;color:#c9943a;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.xptrack{flex:1;background:rgba(255,255,255,.1);border-radius:20px;height:10px;overflow:hidden}
+.xpfill{height:100%;width:0%;background:linear-gradient(90deg,#c9943a,#f0c060);border-radius:20px;transition:width .5s ease}
+.xpnum{font-size:.82rem;color:#f0c060;font-weight:700;white-space:nowrap;min-width:80px;text-align:right}
+.agenda{background:#fff;border-bottom:2px solid #e0ddd6;padding:.75rem 2rem;display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.ag{font-size:.77rem;font-weight:600;color:#6b7280;display:flex;align-items:center;gap:.4rem}
+.ag .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.ag:not(:last-child)::after{content:'›';margin-left:.4rem;color:#ccc}
+.wrap{max-width:920px;margin:0 auto;padding:1.6rem 1.4rem 3rem}
+.sblock{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:1.3rem}
+.shd{display:flex;align-items:center;gap:.8rem;padding:.9rem 1.3rem;cursor:pointer;user-select:none}
+.shd:hover{filter:brightness(.97)}
+.stag{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .65rem;border-radius:5px;flex-shrink:0;white-space:nowrap}
+.stitle{font-family:Georgia,serif;font-size:1.05rem;font-weight:700;flex:1}
+.stime{font-size:.74rem;color:#6b7280;background:#f4f1eb;border-radius:12px;padding:.2rem .65rem;font-weight:600;white-space:nowrap}
+.schev{font-size:.78rem;color:#aaa;transition:transform .25s;flex-shrink:0}
+.sblock.open .schev{transform:rotate(180deg)}
+.sbody{display:none;padding:1.3rem 1.4rem;border-top:1px solid #ece9e2}
+.sblock.open .sbody{display:block}
+.sw  .shd{background:#fef3e2}.sw  .stag{background:#c9943a;color:#fff}.sw  .stitle{color:#7a4f10}
+.sg  .shd{background:#edf5ee}.sg  .stag{background:#4a7c59;color:#fff}.sg  .stitle{color:#1f3d27}
+.sr  .shd{background:#faeaea}.sr  .stag{background:#b5453a;color:#fff}.sr  .stitle{color:#6b1f1a}
+.sv  .shd{background:#eef0fa}.sv  .stag{background:#5c5f9e;color:#fff}.sv  .stitle{color:#2e3060}
+.ssp .shd{background:#e6f4f1}.ssp .stag{background:#2a7f7f;color:#fff}.ssp .stitle{color:#174f4f}
+.swrap .shd{background:#f5eefa}.swrap .stag{background:#7c4fa0;color:#fff}.swrap .stitle{color:#3d1f60}
+.ablock{background:#f8f6f1;border-radius:9px;padding:1rem 1.15rem;margin:.75rem 0}
+.albl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:.5rem}
+.purpose{font-size:.82rem;color:#5c5f9e;font-style:italic;background:#eef0fa;border-radius:6px;padding:.4rem .75rem;margin-bottom:.7rem;border-left:3px solid #5c5f9e}
+p{margin-bottom:.6rem}p:last-child{margin-bottom:0}
+ul,ol{padding-left:1.3rem;margin:.4rem 0}li{margin-bottom:.3rem}
+.transition{background:linear-gradient(90deg,#1a2e4a,#2a4a6e);color:#fff;border-radius:10px;padding:.75rem 1.2rem;margin:1rem 0;display:flex;align-items:center;gap:.7rem;font-size:.86rem}
+.transition span{color:#a8c5e8}
+.transition strong{color:#f0c060}
+.ex{background:#f0f4ec;border-left:3px solid #4a7c59;padding:.6rem .9rem;border-radius:0 7px 7px 0;font-style:italic;font-size:.84rem;margin:.5rem 0;color:#2a4a32}
+.gc{background:linear-gradient(135deg,#1a2e4a,#2a4a6e);color:#fff;border-radius:12px;padding:1.2rem 1.4rem;margin:.75rem 0}
+.gc h3{font-family:Georgia,serif;font-size:1.05rem;color:#c9943a;margin-bottom:.45rem}
+.gc p{font-size:.86rem;color:#c8d8ea;margin-bottom:.35rem}
+.disc{background:linear-gradient(135deg,#2a7f7f,#1f6060);color:#fff;border-radius:10px;padding:1rem 1.2rem;margin:.75rem 0}
+.disc p{font-size:.87rem;color:#d4eaea;margin-bottom:.4rem}
+.disc p:last-child{margin:0}
+.disc strong{color:#fff}
+.tip{background:#fffbf0;border:1px solid #f0d98a;border-radius:8px;padding:.7rem 1rem;margin:.75rem 0;font-size:.86rem}
+.tiplbl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#c9943a;margin-bottom:.25rem}
+.xpbadge{display:inline-flex;align-items:center;gap:.4rem;background:#c9943a;color:#fff;border-radius:20px;padding:.22rem .8rem;font-size:.77rem;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:background .18s}
+.xpbadge:hover{background:#a87830}
+.xp-row{text-align:right;margin-top:.8rem}
+
+/* PASSIVE CLINIC */
+.clinic-tabs{display:flex;gap:.4rem;margin-bottom:.8rem;flex-wrap:wrap}
+.ctab{padding:.4rem 1rem;border-radius:20px;border:2px solid #e0ddd6;background:#fff;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit;color:#6b7280;transition:all .18s}
+.ctab.active{background:#1a2e4a;color:#fff;border-color:#1a2e4a}
+.clinic-panel{display:none}
+.clinic-panel.show{display:block}
+
+/* PASSIVE COMPARISON */
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.5rem 0}
+.compare-box{border-radius:8px;padding:.7rem .9rem;font-size:.86rem;line-height:1.6}
+.compare-box.active-v{background:#faeaea;border:1.5px solid #b5453a}
+.compare-box.passive-v{background:#edf5ee;border:1.5px solid #4a7c59}
+.compare-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+.compare-box.active-v .compare-label{color:#b5453a}
+.compare-box.passive-v .compare-label{color:#4a7c59}
+.formula-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.5rem 0}
+.fbox{background:#1a2e4a;border-radius:8px;padding:.65rem .9rem}
+.fbox-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#c9943a;margin-bottom:.3rem}
+.fbox-formula{font-family:monospace;font-size:.83rem;color:#f0c060;line-height:1.5}
+.fbox-ex{font-size:.8rem;color:#a8c5e8;margin-top:.3rem;font-style:italic}
+
+/* FILL */
+.fill-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;font-size:.86rem;line-height:1.7}
+.fill-blank{border:none;border-bottom:2px solid #c9943a;background:transparent;font-family:inherit;font-size:.86rem;width:190px;padding:.15rem .3rem;color:#1a2e4a;outline:none}
+.fill-blank.ok{border-color:#4a7c59;color:#4a7c59}
+.fill-blank.no{border-color:#b5453a;color:#b5453a}
+.fill-btn{background:#5c5f9e;color:#fff;border:none;border-radius:8px;padding:.38rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0}
+.fill-btn:hover{background:#4a4d8a}
+.fill-fb{font-size:.79rem;font-weight:600}
+
+/* ERROR */
+.error-row{margin-bottom:.9rem}
+.error-sentence{font-size:.88rem;background:#fff8f8;border:1.5px solid #e0ddd6;border-radius:8px;padding:.5rem .9rem;margin-bottom:.3rem;color:#1a2e4a;font-style:italic}
+.error-input{width:100%;border:1.5px solid #e0ddd6;border-radius:8px;padding:.45rem .8rem;font-size:.85rem;font-family:inherit;color:#1e1e1e;background:#fff;outline:none}
+.error-input.ok{border-color:#4a7c59;background:#f0faf2}
+.error-input.no{border-color:#b5453a;background:#fff8f8}
+.error-btn{background:#b5453a;color:#fff;border:none;border-radius:8px;padding:.4rem .95rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;margin-top:.3rem}
+.error-fb{font-size:.79rem;margin-top:.25rem;min-height:1rem;font-weight:600}
+
+/* TRANSFORM */
+.transform-row{margin-bottom:.9rem}
+.transform-prompt{font-size:.86rem;background:#f0f4f8;border-radius:6px;padding:.5rem .8rem;margin-bottom:.3rem;color:#1a2e4a;line-height:1.5}
+.transform-input{width:100%;border:1.5px solid #e0ddd6;border-radius:8px;padding:.45rem .8rem;font-size:.85rem;font-family:inherit;color:#1e1e1e;background:#fff;outline:none}
+.transform-input.ok{border-color:#4a7c59;background:#f0faf2}
+.transform-input.no{border-color:#b5453a;background:#fff8f8}
+.transform-btn{background:#4a7c59;color:#fff;border:none;border-radius:8px;padding:.4rem .95rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;margin-top:.3rem}
+.transform-fb{font-size:.79rem;margin-top:.25rem;min-height:1rem;font-weight:600}
+
+/* WORD ORDER */
+.wo-wrap{margin:.6rem 0}
+.wo-pool{display:flex;flex-wrap:wrap;gap:.4rem;padding:.6rem;background:#f8f6f1;border-radius:8px;border:1.5px dashed #c9943a;min-height:42px;margin-bottom:.4rem}
+.wo-chip{padding:.3rem .75rem;background:#fff;border:2px solid #1a2e4a;border-radius:16px;cursor:pointer;font-size:.83rem;font-weight:600;color:#1a2e4a;user-select:none;transition:all .18s}
+.wo-chip:hover{background:#eef0fa;border-color:#5c5f9e}
+.wo-chip.used{opacity:.3;pointer-events:none}
+.wo-answer{display:flex;flex-wrap:wrap;gap:.4rem;padding:.6rem;background:#f0f9f8;border-radius:8px;border:1.5px solid #2a7f7f;min-height:42px;margin-bottom:.4rem}
+.wo-answer .wo-chip{border-color:#2a7f7f;cursor:pointer}
+.wo-answer .wo-chip:hover{background:#faeaea;border-color:#b5453a}
+.wo-btns{display:flex;gap:.4rem}
+.wo-check{background:#2a7f7f;color:#fff;border:none;border-radius:8px;padding:.38rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
+.wo-reset{background:#f4f1eb;color:#555;border:1.5px solid #e0ddd6;border-radius:8px;padding:.38rem .9rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
+.wo-fb{font-size:.82rem;font-weight:600;margin-top:.35rem;min-height:1rem}
+
+/* MCQ */
+.mcq{margin:.65rem 0}
+.mcq-q{font-size:.88rem;font-weight:600;color:#1a2e4a;margin-bottom:.4rem;line-height:1.4}
+.mcq-opts{display:flex;flex-direction:column;gap:.3rem}
+.mopt{padding:.4rem .9rem;border-radius:8px;border:1.5px solid #e0ddd6;background:#fff;font-size:.84rem;cursor:pointer;text-align:left;font-family:inherit;transition:all .18s}
+.mopt:hover{border-color:#5c5f9e;background:#eef0fa}
+.mopt.ok{border-color:#4a7c59;background:#edf5ee;color:#1f3d27;font-weight:600}
+.mopt.no{border-color:#b5453a;background:#faeaea}
+.mcq-fb{font-size:.8rem;margin-top:.3rem;min-height:1rem;font-weight:600;color:#4a7c59}
+.mcq-fb.bad{color:#b5453a}
+
+/* DIALOGUE */
+.dialogue{background:#fff;border:1px solid #e0ddd6;border-radius:10px;overflow:hidden;margin:.75rem 0}
+.dline{display:flex;gap:.7rem;padding:.6rem .9rem;border-bottom:1px solid #f0ede6;align-items:flex-start}
+.dline:last-child{border-bottom:none}
+.dspk{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;min-width:55px;padding-top:.1rem;flex-shrink:0}
+.dspk.a{color:#b5453a}
+.dspk.b{color:#2a7f7f}
+.dtext{font-size:.86rem;line-height:1.6;flex:1}
+
+/* AD GAME */
+.ad-buzz-display{font-family:Georgia,serif;font-size:.95rem;font-weight:700;color:#1a2e4a;background:#f8f6f1;border:2px solid #c9943a;border-radius:12px;padding:.9rem 1.2rem;min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center;margin:.5rem 0;line-height:1.4}
+.buzz-opts{display:flex;flex-direction:column;gap:.3rem;margin:.4rem 0}
+.buzz-opt{padding:.45rem .9rem;border-radius:8px;border:1.5px solid #e0ddd6;background:#fff;font-size:.84rem;cursor:pointer;text-align:left;font-family:inherit;transition:all .18s}
+.buzz-opt:hover{border-color:#c9943a;background:#fef3e2}
+.buzz-opt.ok{border-color:#4a7c59;background:#edf5ee;font-weight:600}
+.buzz-opt.no{border-color:#b5453a;background:#faeaea;animation:shk .3s}
+@keyframes shk{0%,100%{transform:translateX(0)}30%{transform:translateX(-4px)}70%{transform:translateX(4px)}}
+.buzz-fb{font-size:.82rem;font-weight:600;min-height:1rem;margin:.3rem 0}
+.buzz-nav{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-top:.5rem}
+.buzz-btn{background:#1a2e4a;color:#fff;border:none;border-radius:8px;padding:.42rem 1.05rem;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit}
+.buzz-btn:hover{background:#2a4a6e}
+.buzz-score{font-size:.82rem;color:#c9943a;font-weight:700}
+
+/* VOCAB TABLE */
+.vtable{width:100%;border-collapse:collapse;margin:.75rem 0;font-size:.84rem}
+.vtable th{background:#1a2e4a;color:#fff;padding:.45rem .8rem;text-align:left;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+.vtable td{padding:.45rem .8rem;border-bottom:1px solid #e8e5de;vertical-align:top}
+.vtable tr:nth-child(even) td{background:#f8f6f1}
+
+/* PB */
+.pb{background:#f0f9f8;border:1.5px solid #2a7f7f;border-radius:10px;padding:.95rem 1.15rem;margin:.75rem 0}
+.pblbl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2a7f7f;margin-bottom:.65rem}
+.pbgrid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem 1.2rem}
+.ph{font-size:.84rem;padding:.22rem 0;border-bottom:1px dashed #b2d8d5;font-style:italic;color:#1a4a4a}
+
+/* SPEAK CARDS */
+.card-deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.6rem;margin:.75rem 0}
+.speak-card{border-radius:10px;padding:.85rem 1rem;border:2px solid #e0ddd6;background:#fff;cursor:pointer;transition:all .2s}
+.speak-card:hover{border-color:#2a7f7f;background:#e6f4f1}
+.speak-card.revealed{border-color:#2a7f7f;background:#e6f4f1}
+.sc-num{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#c9943a;margin-bottom:.3rem}
+.sc-q{font-weight:700;font-size:.86rem;color:#1a2e4a;margin-bottom:.2rem;line-height:1.4}
+.sc-hint{font-size:.79rem;color:#6b7280;display:none}
+.speak-card.revealed .sc-hint{display:block;color:#174f4f}
+
+/* NOTES */
+.notes{border:1.5px dashed #2a7f7f;border-radius:10px;padding:.95rem 1.15rem;margin:.75rem 0;background:#f4faf9}
+.nlbl{font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2a7f7f;margin-bottom:.7rem}
+.nl{border-bottom:1px solid #b2d8d5;height:26px;margin-bottom:4px}
+
+/* WORD BANK */
+.word-bank{display:flex;flex-wrap:wrap;gap:.4rem;padding:.6rem .8rem;background:#fef3e2;border:1.5px solid #c9943a;border-radius:8px;margin:.5rem 0}
+.wb-word{font-size:.83rem;font-weight:600;color:#7a4f10;background:#fff;border:1.5px solid #c9943a;border-radius:16px;padding:.2rem .7rem}
+
+@media(max-width:580px){
+  .obj-grid,.compare-row,.formula-row,.pbgrid,.card-deck{grid-template-columns:1fr}
+  .hdr h1{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="htag">Pre-Independent 4 · Unit 12 – Inside Advertising · Lesson 1</div>
+  <h1>Class 12 — <em>Passive Voice Clinic</em></h1>
+  <div class="hmeta">
+    <span class="hpill">📅 Class 12</span>
+    <span class="hpill">🎯 B1+</span>
+    <span class="hpill">⏱ 90 min</span>
+    <span class="hpill">🖥 Virtual</span>
+    <span class="hpill">📖 Unit 12 · Lesson 1 · pp. 117–119</span>
+  </div>
+</div>
+
+<div class="objectives">
+  <div class="obj-label">Learning Objectives</div>
+  <div class="obj-grid">
+    <div class="obj-item"><span class="obj-n">1</span>Warm up with a fun advertising quiz game to reactivate unit vocabulary</div>
+    <div class="obj-item"><span class="obj-n">2</span>Understand clearly how and why the passive voice works across five tenses</div>
+    <div class="obj-item"><span class="obj-n">3</span>Practise the passive through five different exercise types</div>
+    <div class="obj-item"><span class="obj-n">4</span>Use the passive naturally in reading, dialogue and speaking activities</div>
+  </div>
+</div>
+
+<div class="xpbar">
+  <span class="xplbl">⭐ Class XP</span>
+  <div class="xptrack"><div class="xpfill" id="xpFill"></div></div>
+  <span class="xpnum" id="xpNum">0 / 100 XP</span>
+</div>
+
+<div class="agenda">
+  <div class="ag"><span class="dot" style="background:#c9943a"></span>Warm-Up Game 10 min</div>
+  <div class="ag"><span class="dot" style="background:#4a7c59"></span>Grammar Clinic 25 min</div>
+  <div class="ag"><span class="dot" style="background:#b5453a"></span>Reading 15 min</div>
+  <div class="ag"><span class="dot" style="background:#5c5f9e"></span>Vocabulary 8 min</div>
+  <div class="ag"><span class="dot" style="background:#2a7f7f"></span>Speaking 22 min</div>
+  <div class="ag"><span class="dot" style="background:#7c4fa0"></span>Wrap-Up 10 min</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════ WARM-UP GAME ══════════ -->
+<div class="sblock sw open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Warm-Up Game</span>
+    <span class="stitle">📺 Ad World — True or False Quiz</span>
+    <span class="stime">⏱ 10 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 A fast, competitive quiz about real advertising facts from around the world — some shocking, some surprising. This gets you thinking about the unit theme and primes you for the passive voice clinic.</div>
+
+    <div class="gc">
+      <h3>🎮 How to Play</h3>
+      <p>Read each statement about advertising. Choose the correct answer. Every question uses passive voice — notice the language as you play. <strong>+1 XP per correct answer, +5 bonus for a perfect score.</strong></p>
+    </div>
+
+    <div class="ablock">
+      <div class="ad-buzz-display" id="buzzQ">Press Start to begin!</div>
+      <div class="buzz-opts" id="buzzOpts"></div>
+      <div class="buzz-fb" id="buzzFb"></div>
+      <div class="buzz-nav">
+        <button class="buzz-btn" onclick="startBuzz()">▶ Start</button>
+        <button class="buzz-btn" style="background:#4a7c59" onclick="nextBuzz()">Next →</button>
+        <span class="buzz-score" id="buzzScore"></span>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">💬 React — Whole Group (2 min)</div>
+      <p>Which fact surprised you most? Drop it in the chat and say why — one sentence.</p>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>Did you notice? Almost every quiz question used the passive: <em>was banned, has been removed, are controlled</em>. That's today's main grammar focus — let's understand it properly.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(10)">✅ Done → +10 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ GRAMMAR CLINIC ══════════ -->
+<div class="sblock sg open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Grammar Clinic</span>
+    <span class="stitle">Passive Voice — Step by Step</span>
+    <span class="stime">⏱ 25 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 The passive voice causes confusion because it looks very different from active sentences. This clinic breaks it down step by step — why we use it, how to build it in each tense, and five different ways to practise it.</div>
+
+    <!-- TABS -->
+    <div class="clinic-tabs">
+      <button class="ctab active" onclick="showTab('why')">💡 Why Use It?</button>
+      <button class="ctab" onclick="showTab('how')">🔧 How to Build It</button>
+      <button class="ctab" onclick="showTab('exA')">Exercise A</button>
+      <button class="ctab" onclick="showTab('exB')">Exercise B</button>
+      <button class="ctab" onclick="showTab('exC')">Exercise C</button>
+      <button class="ctab" onclick="showTab('exD')">Exercise D</button>
+      <button class="ctab" onclick="showTab('exE')">Exercise E</button>
+    </div>
+
+    <!-- WHY -->
+    <div class="clinic-panel show" id="tab-why">
+      <p style="font-size:.88rem;margin-bottom:.8rem">The passive voice shifts the focus from <strong>who does the action</strong> to <strong>what happens</strong>. Compare these two situations:</p>
+      <div class="compare-row">
+        <div class="compare-box active-v">
+          <div class="compare-label">Active — we focus on the person</div>
+          <p>The FTC <strong>banned</strong> the ad.</p>
+          <p>Someone <strong>criticized</strong> the campaign.</p>
+          <p>A company <strong>produces</strong> the product.</p>
+        </div>
+        <div class="compare-box passive-v">
+          <div class="compare-label">Passive — we focus on the thing</div>
+          <p>The ad <strong>was banned</strong> by the FTC.</p>
+          <p>The campaign <strong>was criticized</strong>.</p>
+          <p>The product <strong>is produced</strong> by a company.</p>
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tiplbl">🔑 Three reasons to use the passive</div>
+        <ol style="margin:.3rem 0">
+          <li><strong>The action matters more than the person.</strong> <em>"The ad was removed."</em> (We care about the ad, not who removed it.)</li>
+          <li><strong>We don't know who did it.</strong> <em>"The window was broken."</em> (Nobody knows who.)</li>
+          <li><strong>We don't want to say who did it.</strong> <em>"A mistake was made."</em> (Very common in formal/official language!)</li>
+        </ol>
+      </div>
+      <p style="font-size:.84rem;color:#6b7280;margin-top:.5rem">👉 Click <strong>How to Build It</strong> to see the five tense formulas.</p>
+    </div>
+
+    <!-- HOW -->
+    <div class="clinic-panel" id="tab-how">
+      <p style="font-size:.88rem;margin-bottom:.7rem">The passive is always built the same way: <strong>the correct form of "be" + the past participle</strong>. The tense changes the form of "be" — the past participle never changes.</p>
+      <div class="formula-row">
+        <div class="fbox">
+          <div class="fbox-label">Simple Present</div>
+          <div class="fbox-formula">is / are + past participle</div>
+          <div class="fbox-ex">Ads <em>are controlled</em> by the FTC.</div>
+        </div>
+        <div class="fbox">
+          <div class="fbox-label">Present Progressive</div>
+          <div class="fbox-formula">is / are + being + past participle</div>
+          <div class="fbox-ex">The ad <em>is being reviewed</em> right now.</div>
+        </div>
+        <div class="fbox">
+          <div class="fbox-label">Simple Past</div>
+          <div class="fbox-formula">was / were + past participle</div>
+          <div class="fbox-ex">The campaign <em>was banned</em> last year.</div>
+        </div>
+        <div class="fbox">
+          <div class="fbox-label">Present Perfect</div>
+          <div class="fbox-formula">has / have + been + past participle</div>
+          <div class="fbox-ex">The ad <em>has been removed</em> already.</div>
+        </div>
+        <div class="fbox">
+          <div class="fbox-label">Past Perfect</div>
+          <div class="fbox-formula">had + been + past participle</div>
+          <div class="fbox-ex">It <em>had been seen</em> by millions before the ban.</div>
+        </div>
+        <div class="fbox" style="background:#2a4a6e">
+          <div class="fbox-label" style="color:#a8c5e8">⚠️ Common Mistakes</div>
+          <div class="fbox-formula" style="color:#faeaea;font-family:inherit;font-size:.82rem">❌ The ad was remove. → ✅ was removed<br>❌ is being control. → ✅ is being controlled<br>❌ have been saw. → ✅ have been seen</div>
+        </div>
+      </div>
+      <p style="font-size:.84rem;color:#6b7280;margin-top:.5rem">👉 Click <strong>Exercise A</strong> to start practising.</p>
+    </div>
+
+    <!-- EX A — FILL IN THE GAP -->
+    <div class="clinic-panel" id="tab-exA">
+      <p style="font-size:.87rem;margin-bottom:.6rem"><strong>Exercise A — Fill in the Gap</strong> · Complete each sentence with the correct passive form of the verb in brackets.</p>
+      <div class="word-bank">
+        <span class="wb-word">is controlled</span><span class="wb-word">was criticized</span>
+        <span class="wb-word">has been banned</span><span class="wb-word">had been seen</span>
+        <span class="wb-word">are being reviewed</span><span class="wb-word">was removed</span>
+      </div>
+      <div class="fill-row">1. More and more advertising <input class="fill-blank" id="fa0" placeholder="___"> by strict international rules. (control)
+        <button class="fill-btn" onclick="chkF('fa0',['is controlled'],'fab0')">Check</button><span class="fill-fb" id="fab0"></span>
+      </div>
+      <div class="fill-row">2. The fried chicken ad <input class="fill-blank" id="fa1" placeholder="___"> for being offensive to vegans. (criticize)
+        <button class="fill-btn" onclick="chkF('fa1',['was criticized','was criticised'],'fab1')">Check</button><span class="fill-fb" id="fab1"></span>
+      </div>
+      <div class="fill-row">3. That campaign <input class="fill-blank" id="fa2" placeholder="___"> in three countries so far. (ban)
+        <button class="fill-btn" onclick="chkF('fa2',['has been banned'],'fab2')">Check</button><span class="fill-fb" id="fab2"></span>
+      </div>
+      <div class="fill-row">4. The soft drink ad <input class="fill-blank" id="fa3" placeholder="___"> by millions before it was taken down. (see)
+        <button class="fill-btn" onclick="chkF('fa3',['had been seen'],'fab3')">Check</button><span class="fill-fb" id="fab3"></span>
+      </div>
+      <div class="fill-row">5. Several new billboard ads <input class="fill-blank" id="fa4" placeholder="___"> by the ASA this week. (review)
+        <button class="fill-btn" onclick="chkF('fa4',['are being reviewed'],'fab4')">Check</button><span class="fill-fb" id="fab4"></span>
+      </div>
+      <div class="fill-row">6. The ad <input class="fill-blank" id="fa5" placeholder="___"> from the website after only 24 hours. (remove)
+        <button class="fill-btn" onclick="chkF('fa5',['was removed'],'fab5')">Check</button><span class="fill-fb" id="fab5"></span>
+      </div>
+    </div>
+
+    <!-- EX B — ERROR CORRECTION -->
+    <div class="clinic-panel" id="tab-exB">
+      <p style="font-size:.87rem;margin-bottom:.6rem"><strong>Exercise B — Error Correction</strong> · Find the one mistake in each sentence and rewrite it correctly. Focus on the passive structure — wrong form of "be", wrong past participle, or missing "been".</p>
+      <div class="error-row">
+        <div class="error-sentence">1. "The ad was remove after hundreds of complaints were received by the agency."</div>
+        <input class="error-input" id="er0" placeholder="Corrected sentence...">
+        <button class="error-btn" onclick="chkErr(0)">Check</button>
+        <div class="error-fb" id="efb0"></div>
+      </div>
+      <div class="error-row">
+        <div class="error-sentence">2. "The billboard have been criticized by local residents for months."</div>
+        <input class="error-input" id="er1" placeholder="Corrected sentence...">
+        <button class="error-btn" onclick="chkErr(1)">Check</button>
+        <div class="error-fb" id="efb1"></div>
+      </div>
+      <div class="error-row">
+        <div class="error-sentence">3. "More and more ads are being control by international organisations."</div>
+        <input class="error-input" id="er2" placeholder="Corrected sentence...">
+        <button class="error-btn" onclick="chkErr(2)">Check</button>
+        <div class="error-fb" id="efb2"></div>
+      </div>
+      <div class="error-row">
+        <div class="error-sentence">4. "The campaign had been saw by millions of people before it was banned."</div>
+        <input class="error-input" id="er3" placeholder="Corrected sentence...">
+        <button class="error-btn" onclick="chkErr(3)">Check</button>
+        <div class="error-fb" id="efb3"></div>
+      </div>
+    </div>
+
+    <!-- EX C — ACTIVE TO PASSIVE -->
+    <div class="clinic-panel" id="tab-exC">
+      <p style="font-size:.87rem;margin-bottom:.6rem"><strong>Exercise C — Active → Passive Transform</strong> · Rewrite each active sentence in the passive. Keep the same tense. You can include <em>by…</em> or leave it out if it's not important.</p>
+      <div class="transform-row">
+        <div class="transform-prompt">Active: The FTC controls all advertising in the US. → Passive (simple present):</div>
+        <input class="transform-input" id="tr0" placeholder="All advertising...">
+        <button class="transform-btn" onclick="chkTr(0)">Check</button>
+        <div class="transform-fb" id="trfb0"></div>
+      </div>
+      <div class="transform-row">
+        <div class="transform-prompt">Active: The agency criticized the ad for using offensive images. → Passive (simple past):</div>
+        <input class="transform-input" id="tr1" placeholder="The ad...">
+        <button class="transform-btn" onclick="chkTr(1)">Check</button>
+        <div class="transform-fb" id="trfb1"></div>
+      </div>
+      <div class="transform-row">
+        <div class="transform-prompt">Active: Millions of people have seen this campaign. → Passive (present perfect):</div>
+        <input class="transform-input" id="tr2" placeholder="This campaign...">
+        <button class="transform-btn" onclick="chkTr(2)">Check</button>
+        <div class="transform-fb" id="trfb2"></div>
+      </div>
+      <div class="transform-row">
+        <div class="transform-prompt">Active: Regulators are currently reviewing three new ads. → Passive (present progressive):</div>
+        <input class="transform-input" id="tr3" placeholder="Three new ads...">
+        <button class="transform-btn" onclick="chkTr(3)">Check</button>
+        <div class="transform-fb" id="trfb3"></div>
+      </div>
+    </div>
+
+    <!-- EX D — WORD ORDER -->
+    <div class="clinic-panel" id="tab-exD">
+      <p style="font-size:.87rem;margin-bottom:.6rem"><strong>Exercise D — Sentence Builder</strong> · Click the words in the correct order to build a passive sentence. Click a word in the answer area to send it back.</p>
+
+      <div id="woContainer"></div>
+    </div>
+
+    <!-- EX E — DIALOGUE -->
+    <div class="clinic-panel" id="tab-exE">
+      <p style="font-size:.87rem;margin-bottom:.6rem"><strong>Exercise E — Complete the Dialogue</strong> · Fill in the gaps with the correct passive form. The verb is given in brackets.</p>
+
+      <div class="dialogue">
+        <div class="dline">
+          <span class="dspk a">Ana</span>
+          <span class="dtext">Did you see that new energy drink ad? I think it <input class="fill-blank" style="width:150px" id="dl0" placeholder="___"> (make) by the same company that did the sports shoe campaign.</span>
+        </div>
+        <div class="dline">
+          <span class="dspk b">Ben</span>
+          <span class="dtext">Oh yes! Actually, I heard it <input class="fill-blank" style="width:160px" id="dl1" placeholder="___"> (ban) in the UK already.</span>
+        </div>
+        <div class="dline">
+          <span class="dspk a">Ana</span>
+          <span class="dtext">Really? Why?</span>
+        </div>
+        <div class="dline">
+          <span class="dspk b">Ben</span>
+          <span class="dtext">It <input class="fill-blank" style="width:160px" id="dl2" placeholder="___"> (criticize) for targeting young teenagers. Apparently the campaign <input class="fill-blank" style="width:200px" id="dl3" placeholder="___"> (see) by over five million viewers before it was taken down.</span>
+        </div>
+        <div class="dline">
+          <span class="dspk a">Ana</span>
+          <span class="dtext">Wow. Is the company doing anything about it?</span>
+        </div>
+        <div class="dline">
+          <span class="dspk b">Ben</span>
+          <span class="dtext">Yes — a new version <input class="fill-blank" style="width:170px" id="dl4" placeholder="___"> (produce) right now. They say it will be shown only during adult programmes.</span>
+        </div>
+      </div>
+      <button class="fill-btn" onclick="chkDialogue()" style="margin-top:.4rem">Check All</button>
+      <div class="fill-fb" id="dlFb" style="margin-top:.4rem"></div>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>Grammar covered five ways. Now let's read the article from the book and see the passive in real context.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(25)">✅ Done → +25 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ READING ══════════ -->
+<div class="sblock sr open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Reading</span>
+    <span class="stitle">Advertising Around the World: Who Controls What?</span>
+    <span class="stime">⏱ 15 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 You'll practise two reading skills: understanding main ideas and identifying missing sentences — a skill that requires you to think about how paragraphs connect, not just what individual sentences mean.</div>
+
+    <div class="ablock">
+      <div class="albl">📖 Read the Article (4 min) · p. 117</div>
+      <p>Open your book to page 117 and read the article. As you read, underline every passive verb you see. How many can you find?</p>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">❓ Comprehension — Quick Check (3 min)</div>
+      <div class="mcq" id="rq0">
+        <div class="mcq-q">1. What is the main job of agencies like the FTC and the ASA?</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'rq0',false)">a. To create advertising guidelines for companies</button>
+          <button class="mopt" onclick="mcq(this,'rq0',true)">b. To decide if advertising rules have been broken</button>
+          <button class="mopt" onclick="mcq(this,'rq0',false)">c. To fine companies that produce offensive content</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="rq1">
+        <div class="mcq-q">2. What is interesting about the Italian clothing company's baby ad?</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'rq1',false)">a. It was banned in every country where it appeared</button>
+          <button class="mopt" onclick="mcq(this,'rq1',true)">b. It was removed in Sicily but given a prize in Switzerland</button>
+          <button class="mopt" onclick="mcq(this,'rq1',false)">c. It was criticized for making false promises</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="rq2">
+        <div class="mcq-q">3. Why was the soft drink ad removed?</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'rq2',false)">a. Because it showed a celebrity drinking too much</button>
+          <button class="mopt" onclick="mcq(this,'rq2',false)">b. Because it had been seen by too many people</button>
+          <button class="mopt" onclick="mcq(this,'rq2',true)">c. Because of the message it sent by showing a protest situation</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">🔍 Missing Sentences — Skill Focus (4 min) · p. 117</div>
+      <p>Match sentences a–d with gaps 1–4. <strong>Strategy:</strong> read the sentence before AND after each gap — the missing sentence must logically connect both.</p>
+      <div class="mcq" id="ms0">
+        <div class="mcq-q">Gap 1 — after "The job of these agencies is to decide if certain rules are broken by advertisers."</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'ms0',true)">c. These might include making false promises about the product or using offensive images.</button>
+          <button class="mopt" onclick="mcq(this,'ms0',false)">a. It is interesting that what shocks some people is loved by other people.</button>
+          <button class="mopt" onclick="mcq(this,'ms0',false)">b. The message is just as important as the image.</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="ms1">
+        <div class="mcq-q">Gap 2 — introduces examples of ads that caused unexpected complaints.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'ms1',false)">b. The message is just as important as the image.</button>
+          <button class="mopt" onclick="mcq(this,'ms1',true)">d. A TV ad showing people talking with their mouths full of food received the most complaints in the ASA's history.</button>
+          <button class="mopt" onclick="mcq(this,'ms1',false)">a. It is interesting that what shocks some people is loved by other people.</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="ms2">
+        <div class="mcq-q">Gap 3 — after the baby ad was removed in Sicily, but before the Swiss prize example.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'ms2',true)">a. It is interesting that what shocks some people is loved by other people.</button>
+          <button class="mopt" onclick="mcq(this,'ms2',false)">c. These might include making false promises about the product or using offensive images.</button>
+          <button class="mopt" onclick="mcq(this,'ms2',false)">d. A TV ad showing people talking with their mouths full of food received the most complaints.</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+      <div class="mcq" id="ms3">
+        <div class="mcq-q">Gap 4 — after the soft drink ad was removed because of the protest situation.</div>
+        <div class="mcq-opts">
+          <button class="mopt" onclick="mcq(this,'ms3',false)">a. It is interesting that what shocks some people is loved by other people.</button>
+          <button class="mopt" onclick="mcq(this,'ms3',true)">b. The message is just as important as the image.</button>
+          <button class="mopt" onclick="mcq(this,'ms3',false)">d. A TV ad showing people talking with their mouths full of food received the most complaints.</button>
+        </div>
+        <div class="mcq-fb"></div>
+      </div>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>The article used five key words in bold. Let's match them quickly before the speaking activity — you'll need them.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(15)">✅ Done → +15 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ VOCABULARY ══════════ -->
+<div class="sblock sv open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Vocabulary</span>
+    <span class="stitle">Words from the Article · p. 118</span>
+    <span class="stime">⏱ 8 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 Five key words from the reading — all connected to advertising regulation. Match them, then use three in sentences of your own. You'll need them in the speaking activity.</div>
+
+    <div class="ablock">
+      <div class="albl">📋 Reference — Study First (1 min)</div>
+      <table class="vtable">
+        <tr><th>Word</th><th>Part of speech</th><th>Meaning</th></tr>
+        <tr><td><strong>banned</strong></td><td>verb (past participle)</td><td>officially not allowed — forbidden by law or authority</td></tr>
+        <tr><td><strong>complaints</strong></td><td>noun (plural)</td><td>written or spoken statements saying you are unhappy about something</td></tr>
+        <tr><td><strong>criticized</strong></td><td>verb (past participle)</td><td>said publicly what was wrong or bad about something</td></tr>
+        <tr><td><strong>permission</strong></td><td>noun</td><td>official right to do something, given by someone in authority</td></tr>
+        <tr><td><strong>removed</strong></td><td>verb (past participle)</td><td>taken away from a place or platform</td></tr>
+      </table>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">✍️ Use Three — Chat Activity (5 min, pairs)</div>
+      <p>With a partner, write <strong>three sentences</strong> in the chat — one for each word you choose. The sentences must be about a real or imagined ad.</p>
+      <div class="ex">"The ad was banned in Colombia after it received over 500 complaints from viewers."</div>
+      <div class="ex">"The company was given permission to show the ad during sports events only."</div>
+    </div>
+
+    <div class="transition">
+      <span>➜</span>
+      <span>You've got the grammar and the vocabulary. Time to use both — in a speaking activity where you describe and discuss real ads using passive structures.</span>
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(8)">✅ Done → +8 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ SPEAKING ══════════ -->
+<div class="sblock ssp open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Speaking</span>
+    <span class="stitle">🎙 Ad Talk — Two Activities</span>
+    <span class="stime">⏱ 22 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+    <div class="purpose">🎯 Two back-to-back speaking activities. The first is a fast pairs game using passive voice to describe an ad. The second is a richer group discussion using conversation cards.</div>
+
+    <!-- ACTIVITY 1 -->
+    <div class="gc">
+      <h3>🎮 Activity 1 — Guess the Ad (10 min, pairs)</h3>
+      <p>Think of a real ad — from TV, social media, or a billboard. Describe it to your partner using <strong>passive voice</strong> without saying the brand name. Your partner guesses. Then swap.</p>
+      <p>Use at least <strong>two different passive tenses</strong> in your description.</p>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">🗣 Passive Phrase Bank for your Description</div>
+      <div class="pb">
+        <div class="pblbl">Use these to structure your description</div>
+        <div class="pbgrid">
+          <div class="ph">This ad was made by a company that sells...</div>
+          <div class="ph">It has been shown on TV / social media since...</div>
+          <div class="ph">It was produced for / directed at...</div>
+          <div class="ph">The ad has been seen by millions of people.</div>
+          <div class="ph">A famous song / celebrity was used in the ad.</div>
+          <div class="ph">It is known for being very funny / emotional / clever.</div>
+          <div class="ph">It was criticized / praised for...</div>
+          <div class="ph">Permission was given to show it during...</div>
+        </div>
+      </div>
+      <div class="ex">"This ad is made by a very well-known sports brand. It has been shown all over the world during major sporting events. A famous football player is featured in it. The ad has been praised for being very inspirational. Can you guess it?"</div>
+    </div>
+
+    <!-- ACTIVITY 2 -->
+    <div class="gc" style="margin-top:1.2rem">
+      <h3>🃏 Activity 2 — Ad Conversation Cards (10 min, groups of 4–5)</h3>
+      <p>Click a card to reveal a discussion question. Everyone must answer before you move to the next card. Use passive structures and today's vocabulary in your answers whenever possible.</p>
+    </div>
+
+    <div class="card-deck">
+      <div class="speak-card" onclick="this.classList.toggle('revealed')">
+        <div class="sc-num">Card 1</div>
+        <div class="sc-q">Has an ad ever been banned in your country that you think should NOT have been? What happened?</div>
+        <div class="sc-hint">💡 Use: was banned, was criticized, was removed, had been seen</div>
+      </div>
+      <div class="speak-card" onclick="this.classList.toggle('revealed')">
+        <div class="sc-num">Card 2</div>
+        <div class="sc-q">Do you think advertising directed at children should be controlled more strictly? Why?</div>
+        <div class="sc-hint">💡 Use: is controlled, should be banned, are being reviewed</div>
+      </div>
+      <div class="speak-card" onclick="this.classList.toggle('revealed')">
+        <div class="sc-num">Card 3</div>
+        <div class="sc-q">Think about an ad you have been influenced by. Why was it so effective? How was it made?</div>
+        <div class="sc-hint">💡 Use: was made by, was shown on, was targeted at, has been seen</div>
+      </div>
+      <div class="speak-card" onclick="this.classList.toggle('revealed')">
+        <div class="sc-num">Card 4</div>
+        <div class="sc-q">Should celebrities be held responsible for the products they are paid to promote? Why?</div>
+        <div class="sc-hint">💡 Use: are paid to, is promoted by, was criticized for, has been used</div>
+      </div>
+      <div class="speak-card" onclick="this.classList.toggle('revealed')">
+        <div class="sc-num">Card 5</div>
+        <div class="sc-q">Have any ads been shown recently that you found offensive or inappropriate? What should be done?</div>
+        <div class="sc-hint">💡 Use: should be removed, has been criticized, was complained about</div>
+      </div>
+      <div class="speak-card" onclick="this.classList.toggle('revealed')">
+        <div class="sc-num">Card 6</div>
+        <div class="sc-q">Do you think advertising works? Has your opinion on this been changed by anything you've seen today?</div>
+        <div class="sc-hint">💡 Use: has been changed, was influenced, has been shown, is known for</div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tiplbl">💡 Keep Talking</div>
+      After each answer, react to what your classmate said: <em>"Can we hear someone else's opinion?" / "What do you think, [name]?"</em> — Don't move to the next card until everyone has spoken.
+    </div>
+
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(22)">✅ Done → +22 XP</button></div>
+  </div>
+</div>
+
+<!-- ══════════ WRAP-UP ══════════ -->
+<div class="sblock swrap open">
+  <div class="shd" onclick="tog(this)">
+    <span class="stag">Wrap-Up</span>
+    <span class="stitle">Exit Ticket</span>
+    <span class="stime">⏱ 10 min</span>
+    <span class="schev">▼</span>
+  </div>
+  <div class="sbody">
+
+    <div class="ablock">
+      <div class="albl">⚡ Quick Fire — Oral Grammar Check (5 min)</div>
+      <p>Your teacher will call on students. Transform each sentence into the passive out loud — no preparation.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.6rem 0">
+        <div style="background:#f8f6f1;border-radius:8px;padding:.55rem .85rem;font-size:.85rem"><strong>1.</strong> The ASA receives thousands of complaints. →</div>
+        <div style="background:#f8f6f1;border-radius:8px;padding:.55rem .85rem;font-size:.85rem"><strong>2.</strong> They banned the ad last week. →</div>
+        <div style="background:#f8f6f1;border-radius:8px;padding:.55rem .85rem;font-size:.85rem"><strong>3.</strong> Millions of people have seen this campaign. →</div>
+        <div style="background:#f8f6f1;border-radius:8px;padding:.55rem .85rem;font-size:.85rem"><strong>4.</strong> They are reviewing the new billboard right now. →</div>
+        <div style="background:#f8f6f1;border-radius:8px;padding:.55rem .85rem;font-size:.85rem"><strong>5.</strong> The town officials removed the poster. →</div>
+        <div style="background:#f8f6f1;border-radius:8px;padding:.55rem .85rem;font-size:.85rem"><strong>6.</strong> Someone had already criticized the ad before the ban. →</div>
+      </div>
+    </div>
+
+    <div class="ablock">
+      <div class="albl">🎟 Exit Ticket — Three Sentences in the Chat (3 min)</div>
+      <div class="disc">
+        <p>📝 <strong>One passive sentence:</strong> Write one original sentence about any ad using the passive. Try to use a tense we practised today.</p>
+        <p>💡 <strong>One thing that is now clear:</strong> "I understand now that the passive is used when..."</p>
+        <p>❓ <strong>One thing still unclear:</strong> "I'm still not sure when to use ___ vs ___."</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <div class="tiplbl">✅ Today You...</div>
+      Played an advertising facts quiz using passive sentences · Studied the passive voice step by step across five tenses · Practised through five different exercise types · Read the article and matched missing sentences · Used passive voice to describe and discuss ads in two speaking activities
+    </div>
+    <div class="xp-row"><button class="xpbadge" onclick="addXP(10)">✅ Done → +10 XP</button></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function tog(h){h.closest('.sblock').classList.toggle('open')}
+let xp=0;
+function addXP(n){xp=Math.min(100,xp+n);document.getElementById('xpFill').style.width=xp+'%';document.getElementById('xpNum').textContent=xp+' / 100 XP';}
+
+// CLINIC TABS
+function showTab(id){
+  document.querySelectorAll('.clinic-panel').forEach(p=>p.classList.remove('show'));
+  document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('show');
+  event.target.classList.add('active');
+}
+
+// MCQ
+function mcq(btn,id,correct){
+  const w=document.getElementById(id);if(w.querySelector('.ok'))return;
+  w.querySelectorAll('.mopt').forEach(b=>b.disabled=true);
+  btn.classList.add(correct?'ok':'no');
+  const fb=w.querySelector('.mcq-fb');
+  fb.textContent=correct?'✅ Correct!':'❌ Not quite — re-read that section.';
+  fb.className='mcq-fb'+(correct?'':' bad');
+  if(correct)addXP(1);
+}
+
+// FILL
+function chkF(id,answers,fbId){
+  const val=document.getElementById(id).value.trim().toLowerCase();
+  const ok=answers.some(a=>val.includes(a.toLowerCase()));
+  document.getElementById(id).classList.remove('ok','no');
+  document.getElementById(id).classList.add(ok?'ok':'no');
+  const fb=document.getElementById(fbId);
+  fb.textContent=ok?'✅':'❌';fb.style.color=ok?'#4a7c59':'#b5453a';
+  if(ok)addXP(1);
+}
+
+// ERROR
+const errData=[
+  {keys:['was removed'],hint:'"remove" → past participle is "removed". Pattern: was + past participle.'},
+  {keys:['has been criticized','has been criticised'],hint:'"have" agrees with "billboard" (singular) → "has". Pattern: has been + past participle.'},
+  {keys:['are being controlled'],hint:'"control" → past participle is "controlled". Pattern: are being + past participle.'},
+  {keys:['had been seen'],hint:'"see" → irregular past participle is "seen", not "saw". Pattern: had been + past participle.'}
+];
+function chkErr(i){
+  const val=document.getElementById('er'+i).value.trim().toLowerCase();
+  const ok=errData[i].keys.some(k=>val.includes(k));
+  document.getElementById('er'+i).classList.remove('ok','no');
+  document.getElementById('er'+i).classList.add(ok?'ok':'no');
+  const fb=document.getElementById('efb'+i);
+  if(ok){fb.textContent='✅ Correct!';fb.style.color='#4a7c59';addXP(2);}
+  else{fb.textContent='❌ '+errData[i].hint;fb.style.color='#b5453a';}
+}
+
+// TRANSFORM
+const trData=[
+  {keys:['all advertising is controlled'],hint:'Pattern: All advertising + is + controlled (simple present passive)'},
+  {keys:['was criticized','was criticised'],hint:'Pattern: The ad + was + criticized (simple past passive)'},
+  {keys:['has been seen'],hint:'Pattern: This campaign + has been + seen (present perfect passive)'},
+  {keys:['are being reviewed'],hint:'Pattern: Three new ads + are being + reviewed (present progressive passive)'}
+];
+function chkTr(i){
+  const val=document.getElementById('tr'+i).value.trim().toLowerCase();
+  const ok=trData[i].keys.some(k=>val.includes(k));
+  document.getElementById('tr'+i).classList.remove('ok','no');
+  document.getElementById('tr'+i).classList.add(ok?'ok':'no');
+  const fb=document.getElementById('trfb'+i);
+  if(ok){fb.textContent='✅ Well done!';fb.style.color='#4a7c59';addXP(2);}
+  else{fb.textContent='❌ '+trData[i].hint;fb.style.color='#b5453a';}
+}
+
+// WORD ORDER
+const woSentences=[
+  {words:['The','ad','was','banned','by','the','ASA'],answer:'The ad was banned by the ASA'},
+  {words:['Millions','of','people','have','been','reached','by','this','campaign'],answer:'Millions of people have been reached by this campaign'},
+  {words:['New','guidelines','are','being','introduced','by','the','government'],answer:'New guidelines are being introduced by the government'},
+  {words:['The','billboard','had','been','removed','before','the','complaint','arrived'],answer:'The billboard had been removed before the complaint arrived'}
+];
+let woIdx=0;let woPlaced=[];
+function initWO(){
+  const s=woSentences[woIdx];
+  const pool=[...s.words].sort(()=>Math.random()-.5);
+  woPlaced=[];
+  const c=document.getElementById('woContainer');
+  c.innerHTML=`
+    <p style="font-size:.83rem;color:#6b7280;margin-bottom:.4rem">Sentence ${woIdx+1} of ${woSentences.length}</p>
+    <div class="wo-pool" id="woPool">${pool.map(w=>`<span class="wo-chip" onclick="moveToAnswer(this)">${w}</span>`).join('')}</div>
+    <p style="font-size:.79rem;color:#6b7280;margin:.3rem 0">Your sentence:</p>
+    <div class="wo-answer" id="woAnswer"></div>
+    <div class="wo-btns">
+      <button class="wo-check" onclick="checkWO()">✅ Check</button>
+      <button class="wo-reset" onclick="resetWO()">↺ Reset</button>
+      ${woIdx<woSentences.length-1?'<button class="wo-check" style="background:#5c5f9e" onclick="nextWO()">Next →</button>':''}
+    </div>
+    <div class="wo-fb" id="woFb"></div>`;
+}
+function moveToAnswer(chip){
+  chip.classList.add('used');
+  const ans=document.getElementById('woAnswer');
+  const newChip=document.createElement('span');
+  newChip.className='wo-chip';newChip.textContent=chip.textContent;
+  newChip.onclick=function(){
+    chip.classList.remove('used');
+    ans.removeChild(newChip);
+  };
+  ans.appendChild(newChip);
+}
+function checkWO(){
+  const ans=document.getElementById('woAnswer');
+  const placed=Array.from(ans.querySelectorAll('.wo-chip')).map(c=>c.textContent).join(' ');
+  const correct=woSentences[woIdx].answer;
+  const fb=document.getElementById('woFb');
+  if(placed===correct){fb.textContent='✅ Perfect!';fb.style.color='#4a7c59';addXP(2);}
+  else{fb.textContent='❌ Not quite. Correct: '+correct;fb.style.color='#b5453a';}
+}
+function resetWO(){initWO();}
+function nextWO(){if(woIdx<woSentences.length-1){woIdx++;initWO();}}
+document.addEventListener('DOMContentLoaded',initWO);
+
+// DIALOGUE CHECK
+const dlAns=[
+  {keys:['was made'],hint:'Simple past passive: was + made'},
+  {keys:['has been banned','was banned'],hint:'Present perfect passive: has been + banned'},
+  {keys:['was criticized','was criticised'],hint:'Simple past passive: was + criticized'},
+  {keys:['had been seen'],hint:'Past perfect passive: had been + seen'},
+  {keys:['is being produced'],hint:'Present progressive passive: is being + produced'}
+];
+function chkDialogue(){
+  let score=0;
+  dlAns.forEach((d,i)=>{
+    const el=document.getElementById('dl'+i);
+    const val=el.value.trim().toLowerCase();
+    const ok=d.keys.some(k=>val.includes(k));
+    el.classList.remove('ok','no');el.classList.add(ok?'ok':'no');
+    if(ok)score++;
+  });
+  const fb=document.getElementById('dlFb');
+  if(score===5){fb.textContent='🎉 All correct! +5 XP';fb.style.color='#4a7c59';addXP(5);}
+  else{fb.textContent=score+'/5 correct — check the red blanks and review the tense needed.';fb.style.color='#b5453a';}
+}
+
+// BUZZ GAME
+const buzzQs=[
+  {q:'In 2017, the UK\'s ASA received about _____ complaints about ads in a single year.',opts:['30,000','5,000','100,000','1,000'],ans:0,exp:'Correct! About 30,000 complaints were received by the ASA in 2017.'},
+  {q:'The Italian clothing brand\'s baby billboard was ordered to be removed in Sicily, but was given a prize in ___.',opts:['Switzerland','Germany','France','Austria'],ans:0,exp:'Correct! The same ad was praised in Switzerland after being banned in Sicily.'},
+  {q:'True or False: The fried chicken ad that showed chickens dancing to rap music was banned by the ASA.',opts:['True','False — the ban request was turned down'],ans:1,exp:'False! The ASA turned down the request — the ad was criticized but NOT banned.'},
+  {q:'A famous soft drink ad was removed because a celebrity was shown sharing a drink at a ___.',opts:['sports event','protest','music concert','film premiere'],ans:1,exp:'Correct! The ad was criticized for using a protest to sell a product.'},
+  {q:'Which organization controls advertising standards in the US?',opts:['The FTC','The ASA','The FDA','The FCC'],ans:0,exp:'Correct! The Federal Trade Commission (FTC) makes sure all ads are accurate.'},
+  {q:'The ad that received the MOST complaints in ASA history showed people doing what?',opts:['Dancing in the street','Talking with their mouths full of food','Using mobile phones while driving','Wasting food'],ans:1,exp:'Correct! The mouths-full-of-food ad received more complaints than any other in ASA history.'},
+  {q:'True or False: The passive voice is used when the action is more important than the person who does it.',opts:['True','False'],ans:0,exp:'True! That\'s exactly why advertising language uses passive so much — we focus on what was done, not who did it.'},
+];
+let bIdx=-1,bScore=0,bAnswered=false;
+function startBuzz(){bIdx=0;bScore=0;bAnswered=false;showBuzz();}
+function nextBuzz(){
+  if(bIdx<0)return;
+  if(bIdx<buzzQs.length-1){bIdx++;bAnswered=false;showBuzz();}
+  else{
+    document.getElementById('buzzQ').textContent='🎉 Quiz complete! Final score: '+bScore+'/'+buzzQs.length;
+    document.getElementById('buzzOpts').innerHTML='';
+    document.getElementById('buzzFb').textContent='';
+    if(bScore===buzzQs.length)addXP(5);
+  }
+}
+function showBuzz(){
+  const q=buzzQs[bIdx];
+  document.getElementById('buzzQ').textContent='Q'+(bIdx+1)+'/'+buzzQs.length+': '+q.q;
+  document.getElementById('buzzScore').textContent='Score: '+bScore;
+  document.getElementById('buzzFb').textContent='';
+  const opts=document.getElementById('buzzOpts');
+  opts.innerHTML='';
+  const idx=[0,1,2,3].slice(0,q.opts.length).sort(()=>Math.random()-.5);
+  idx.forEach(i=>{
+    const b=document.createElement('button');
+    b.className='buzz-opt';b.textContent=q.opts[i];
+    b.onclick=function(){
+      if(bAnswered)return;bAnswered=true;
+      const correct=(i===q.ans);
+      b.classList.add(correct?'ok':'no');
+      if(correct){bScore++;addXP(1);}
+      document.getElementById('buzzFb').textContent=(correct?'✅ ':'❌ ')+q.exp;
+      document.getElementById('buzzFb').style.color=correct?'#4a7c59':'#b5453a';
+      document.getElementById('buzzScore').textContent='Score: '+bScore;
+    };
+    opts.appendChild(b);
+  });
+}
+</script>
+</body>
+</html>
